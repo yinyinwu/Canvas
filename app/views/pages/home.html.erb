@@ -1,0 +1,12 @@
+<% content_for :head do %>
+	<%= javascript_include_tag "jquery_rails.js" %>
+<% end %>
+<h1>CANVAS</h1>
+<canvas id="myCanvas" width = "600" height = "200"></canvas>
+submit form via ajax
+<div id="clear"><a href='#'>Clear</a></div>
+
+<%= form_for :selection, :url => {:controller => :video, :action => :save_selection}, :remote => true do |f| %>
+	<%= hidden_field :video, :x1, :value => 5 %>
+	<%= f.submit :onclick => 'addTag()' %>
+<% end %>
